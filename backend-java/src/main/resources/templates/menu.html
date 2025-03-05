@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECOPILACIÓN INFORMACIÓN ESTADISTICA</title>
-    <link rel=icon href="../imagenes/logo.ico">
+    <link rel=icon href="/imagenes/logo.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles_menu.css">
+    <link rel="stylesheet" th:href="@{/css/styles_menu.css}">
 
 </head>
 
@@ -15,8 +15,8 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark " style="background-color: #343a40 !important;">
         <div class="container d-flex align-items-center">
-            <img src="../imagenes/DAJUDECO.png" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
-            <a class="navbar-brand" href="principal.html">Sistema Estadístico</a>
+            <img src="/imagenes/DAJUDECO.png" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
+            <a class="navbar-brand" th:href="@{/principal}">Sistema Estadístico</a>
   
             <!-- Menú Desplegable -->
             <div class="dropdown">
@@ -25,11 +25,11 @@
                     Menú
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="principal.html">Requerimientos</a>
-                        <a class="dropdown-item" href="notificaciones.html">Notificaciones</a>
+                        <a class="dropdown-item" th:href="@{principal}">Requerimientos</a>
+                        <a class="dropdown-item" th:href="@{notificaciones}">Notificaciones</a>
                         <hr>
                     <button type="button" class="btn btn-outline-danger"
-                        onclick="window.location.href='inicio.html';">Cerrar Sesión</button>
+                    th:attr="onclick='window.location.href=\'' + @{/inicio} + '\''">Cerrar Sesión</button>
                 </div>
   
             </div>
@@ -67,8 +67,8 @@
                         <div class="d-grid gap-2 d-md-block d-md-flex justify-content-md-center" >
                             
                             <button class="btn btn_editar"
-                            onclick="window.location.href='modificar.html';">Editar</button>
-                            <button class="btn btn_editar" id="visualizar" onclick="window.location.href='form.html';"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            th:attr="onclick='window.location.href=\'' + @{/modificar} + '\''">Editar</button>
+                            <button class="btn btn_editar" id="visualizar"  th:attr="onclick='window.location.href=\'' + @{/form} + '\''"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
                                 <path
@@ -87,8 +87,8 @@
                     <td><div class="d-grid gap-2 d-md-block d-md-flex justify-content-md-center" >
                             
                         <button class="btn btn_editar"
-                        onclick="window.location.href='modificar.html';">Editar</button>
-                        <button class="btn btn_editar" id="visualizar" onclick="window.location.href='form.html';"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        th:attr="onclick='window.location.href=\'' + @{/modificar + '\''">Editar</button>
+                        <button class="btn btn_editar" id="visualizar"  th:attr="onclick='window.location.href=\'' + @{/form} + '\''"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
                             <path
@@ -107,8 +107,8 @@
                     <td><div class="d-grid gap-2 d-md-block d-md-flex justify-content-md-center" >
                             
                         <button class="btn btn_editar"
-                        onclick="window.location.href='modificar.html';">Editar</button>
-                        <button class="btn btn_editar" id="visualizar" onclick="window.location.href='form.html';"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        th:attr="onclick='window.location.href=\'' + @{/modificar} + '\''">Editar</button>
+                        <button class="btn btn_editar" id="visualizar"  th:attr="onclick='window.location.href=\'' + @{/form} + '\''"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
                             <path
@@ -139,7 +139,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No cuento con información</button>
-          <button type="button" class="btn btn-primary" onclick="window.location.href='nuevo.html';">Nueva Causa</button>
+          <button type="button" class="btn btn-primary" th:attr="onclick='window.location.href=\'' + @{/nuevo} + '\''">Nueva Causa</button>
       </div>
     </div>
   </div>

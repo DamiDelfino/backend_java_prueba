@@ -15,8 +15,8 @@
     <nav class="navbar navbar-dark" style="background-color: #343a40 !important;">
         <div class="container d-flex align-items-center">
             <img th:src="@{/imagenes/DAJUDECO.png}" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
-            <a class="navbar-brand" th:href="@{menu}">Sistema Estadístico</a>
-            <button type="button" class="btn btn-outline-danger" onclick="window.location.href='inicio.html';">Cerrar Sesión</button>
+            <a class="navbar-brand" th:href="@{/menu}">Sistema Estadístico</a>
+            <button type="button" class="btn btn-outline-danger"  th:attr="onclick='window.location.href=\'' + @{/inicio} + '\''">Cerrar Sesión</button>
         </div>
     </nav>
 

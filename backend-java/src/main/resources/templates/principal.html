@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECOPILACIÓN INFORMACIÓN ESTADISTICA</title>
-    <link rel="icon" href="/imagenes/logo.ico">
+    <link rel="icon" th:href="@{/imagenes/logo.ico}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" th:href="@{/css/style_principal.css}">
+    <link rel="stylesheet" th:href="@{/css/styles_principal.css}">
 
 </head>
 
@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark " style="background-color: #343a40 !important;">
       <div class="container d-flex align-items-center">
-        <img src="/imagenes/DAJUDECO.png" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
+        <img th:src="@{/imagenes/DAJUDECO.png}" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
           <a class="navbar-brand" th:href="@{/principal}">Sistema Estadístico</a>
 
           <!-- Menú Desplegable -->
@@ -29,7 +29,7 @@
                       <a class="dropdown-item" th:href="@{/notificaciones}">Notificaciones</a>
                       <hr>
                   <button type="button" class="btn btn-outline-danger"
-                  th:onclick="'window.location.href=\'' + @{/inicio} + '\'';">Cerrar Sesión</button>
+                  th:attr="onclick='window.location.href=\'' + @{/inicio} + '\''">Cerrar Sesión</button>
               </div>
 
           </div>
@@ -45,14 +45,14 @@
     <div class="section">
         <div class="row">
           <h3>Requerimiento 2025</h2>
-          <button class="btn butn" th:onclick="'window.location.href=\'' + @{/menu} + '\'' ;">Ingresar</button>
+          <button class="btn butn" th:attr="onclick='window.location.href=\'' + @{/menu} + '\''">Ingresar</button>
           
         </div>
         <div class="horizontal-rule"></div>
         <div class="row">
           <h3>Requerimientos anteriores</h2>
           <div class="buttons">
-            <button class="btn butn" th:onclick="'window.location.href=\'' + @{/reqAutoridades} + '\'';">Febrero 24</button>
+            <button class="btn butn" th:attr="onclick='window.location.href=\'' + @{/reqAutoridades} + '\''">Febrero 24</button>
             <button class="btn butn">Inicial</button>
           </div>
         </div>

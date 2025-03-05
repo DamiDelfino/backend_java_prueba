@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-dark " style="background-color: #343a40 !important;">
         <div class="container d-flex align-items-center">
-            <img src="../imagenes/DAJUDECO.png" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
+            <img src="/imagenes/DAJUDECO.png" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
             <a class="navbar-brand" th:href="@{admin}">Sistema Estadístico</a>
 
             <!-- Menú Desplegable -->
@@ -30,7 +30,7 @@
                         <a class="dropdown-item" th:href="@{reporte}">Reportes</a>
                         <hr>
                     <button type="button" class="btn btn-outline-danger"
-                    th:onclick="'window.location.href=\'' + @{/inicio} + '\'';">Cerrar Sesión</button>
+                    th:attr="onclick='window.location.href=\'' + @{/inicio} + '\''">Cerrar Sesión</button>
                 </div>
 
             </div>

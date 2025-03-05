@@ -24,7 +24,7 @@ function validarContrasena() {
     if (usuario === 'test'){
         if (contrasena === '1234') {
         // Redirigir a la página si la contraseña es correcta
-        window.location.href = 'principal.html';
+        window.location.href = '@{principal}';
     }
     else{
         alert('Contraseña incorrecto. Inténtelo de nuevo.')
@@ -33,7 +33,7 @@ function validarContrasena() {
     }else if (usuario === 'admin'){
         if (contrasena === '1234') {
         // Redirigir a la página si la contraseña es correcta
-        window.location.href = 'admin.html';
+        window.location.href = 'admin';
     }
     else{
         alert('Contraseña incorrecto. Inténtelo de nuevo.')

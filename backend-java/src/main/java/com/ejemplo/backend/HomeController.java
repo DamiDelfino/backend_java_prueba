@@ -51,8 +51,8 @@ public class HomeController {
         return "nuevo";
     }
     @GetMapping("/popup")
-    public String mostrarPopup(){
-        return "popup";
+    public String mostrarPopup() {
+        return "popup";  
     }
     @GetMapping("/reporte")
     public String mostrarReporte(){
