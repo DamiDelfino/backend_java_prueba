@@ -36,4 +36,34 @@ public class HomeController {
     public String mostrarAdmin(){
         return "admin";
     }
+    
+    @GetMapping("/inicio")
+    public String mostrarInicio(){
+        return "inicio";
+    }
+    
+    @GetMapping("/menu")
+    public String mostrarMenu(){
+        return "menu";
+    }
+    @GetMapping("/nuevo")
+    public String mostrarNuevo(){
+        return "nuevo";
+    }
+    @GetMapping("/popup")
+    public String mostrarPopup(){
+        return "popup";
+    }
+    @GetMapping("/reporte")
+    public String mostrarReporte(){
+        return "reporte";
+    }
+    @GetMapping("/reqAutoridades")
+    public String mostrarReqAutoridades(){
+        return "reqAutoridades";
+    } @GetMapping("/requerimiento")
+    public String mostrarRequerimiento(){
+        return "requerimiento";
+    }
+
 }
