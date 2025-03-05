@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECOPILACIÓN INFORMACIÓN ESTADISTICA</title>
-    <link rel=icon href="../imagenes/logo.ico">
+    <link rel=icon href="/imagenes/logo.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles_notificaciones.css">
+    <link rel="stylesheet" th:href="@{/css/styles_notificaciones.css}">
     
 </head>
 
@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark " style="background-color: #343a40 !important;">
         <div class="container d-flex align-items-center">
-            <img src="../imagenes/DAJUDECO.png" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
+            <img th:src="@{/imagenes/DAJUDECO.png}" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
             <a class="navbar-brand" href="principal.html">Sistema Estadístico</a>
   
             <!-- Menú Desplegable -->
