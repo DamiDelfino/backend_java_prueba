@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class HomeController {
 
-    @GetMapping("/principal.html")
+    @GetMapping("/principal")
     public String mostrarPrincipal() {
-        return "principal.html";  //
+        return "principal";  //
     }
 
     @GetMapping("/notificaciones")
@@ -26,5 +26,9 @@ public class HomeController {
     @GetMapping("/form")
     public String mostrarFormulario() {
         return "form";
+    }
+    @GetMapping("/test")
+    public String test() {
+        return "test";  // Devuelve el nombre de la vista sin la extensión .html
     }
 }
