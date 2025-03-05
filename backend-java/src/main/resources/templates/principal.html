@@ -7,7 +7,7 @@
     <title>RECOPILACIÓN INFORMACIÓN ESTADISTICA</title>
     <link rel="icon" href="/imagenes/logo.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles_principal.css">">
+    <link rel="stylesheet" th:href="@{/css/style_principal.css}">
 
 </head>
 
@@ -16,7 +16,7 @@
     <nav class="navbar navbar-dark " style="background-color: #343a40 !important;">
       <div class="container d-flex align-items-center">
         <img src="/imagenes/DAJUDECO.png" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
-          <a class="navbar-brand" href="principal.html">Sistema Estadístico</a>
+          <a class="navbar-brand" th:href="@{/principal}">Sistema Estadístico</a>
 
           <!-- Menú Desplegable -->
           <div class="dropdown">

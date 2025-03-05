@@ -17,6 +17,10 @@ public class HomeController {
     public String mostrarNotificaciones() {
         return "notificaciones";
     }
+    @GetMapping("/estadistica")
+    public String mostrarEstadistica() {
+        return "estadisitca";
+    }
 
     @GetMapping("/modificar")
     public String mostrarModificar() {
@@ -27,8 +31,9 @@ public class HomeController {
     public String mostrarFormulario() {
         return "form";
     }
-    @GetMapping("/test")
-    public String test() {
-        return "test";  // Devuelve el nombre de la vista sin la extensión .html
+    
+    @GetMapping("/admin")
+    public String mostrarAdmin(){
+        return "admin";
     }
 }

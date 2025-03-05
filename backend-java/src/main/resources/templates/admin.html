@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RECOPILACIÓN INFORMACIÓN ESTADISTICA</title>
-    <link rel=icon href="../imagenes/logo.ico">
+    <link rel=icon href="/imagenes/logo.ico">
     <script src="../js/admin.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles_admin.css">
+    <link rel="stylesheet" th:href="@{/css/styles_admin.css}">
 </head>
 
 <body>
     <nav class="navbar navbar-dark" style="background-color: #343a40 !important;">
         <div class="container d-flex align-items-center">
-            <img src="../imagenes/DAJUDECO.png" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
+            <img src="/imagenes/DAJUDECO.png" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
             <a class="navbar-brand" href="#">Sistema Estadístico</a>
     
             <!-- Menú Desplegable -->
@@ -23,12 +23,12 @@
                     Menú
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="admin.html">Respuestas</a>
-                    <a class="dropdown-item" href="seguimiento.html">Seguimiento</a>
-                    <a class="dropdown-item" href="estadistica.html">Estadisticas</a>
-                    <a class="dropdown-item" href="reporte.html">Reportes</a>
+                    <a class="dropdown-item" th:href="@{/admin.html}">Respuestas</a>
+                    <a class="dropdown-item" href="@{/seguimiento.html}">Seguimiento</a>
+                    <a class="dropdown-item" href="@{/estadistica.html}">Estadisticas</a>
+                    <a class="dropdown-item" href="@{/reporte.html"}>Reportes</a>
                     <hr>
-                    <button type="button" class="btn btn-outline-danger"  onclick="window.location.href='inicio.html';">Cerrar Sesión</button>
+                    <button type="button" class="btn btn-outline-danger"  th:onclick="'window.location.href=\'' + @{/inicio} + '\'';">Cerrar Sesión</button>
                 </div>
                 
             </div>
