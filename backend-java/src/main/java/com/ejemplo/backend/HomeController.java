@@ -2,26 +2,29 @@ package com.ejemplo.backend;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/")
 public class HomeController {
 
-    @GetMapping("/principal")
-    public String mostrarPrincipal(){
-        return "principal.html";
+    @GetMapping("/principal.html")
+    public String mostrarPrincipal() {
+        return "principal.html";  //
     }
+
     @GetMapping("/notificaciones")
     public String mostrarNotificaciones() {
-        return "notificaciones.html";
+        return "notificaciones";
     }
 
     @GetMapping("/modificar")
     public String mostrarModificar() {
-        return "modificar.html";
+        return "modificar";
     }
 
     @GetMapping("/form")
     public String mostrarFormulario() {
-        return "form.html";
+        return "form";
     }
 }
