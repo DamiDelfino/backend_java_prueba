@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark " style="background-color: #343a40 !important;">
       <div class="container d-flex align-items-center">
-        <img src="/imagenes/DAJUDECO.png" alt="Logo de DAJUDECO"> class="navbar-logo mr-3">
+        <img src="/imagenes/DAJUDECO.png" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
           <a class="navbar-brand" href="principal.html">Sistema Estadístico</a>
 
           <!-- Menú Desplegable -->
@@ -25,11 +25,11 @@
                   Menú
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="principal.html">Requerimientos</a>
-                      <a class="dropdown-item" href="notificaciones.html">Notificaciones</a>
+                      <a class="dropdown-item" th:href="@{/principal}">Requerimientos</a>
+                      <a class="dropdown-item" th:href="@{/notificaciones}">Notificaciones</a>
                       <hr>
                   <button type="button" class="btn btn-outline-danger"
-                      onclick="window.location.href='inicio.html';">Cerrar Sesión</button>
+                  th:onclick="'window.location.href=\'' + @{/inicio} + '\'';">Cerrar Sesión</button>
               </div>
 
           </div>
@@ -45,13 +45,14 @@
     <div class="section">
         <div class="row">
           <h3>Requerimiento 2025</h2>
-          <button class="btn butn" onclick="window.location.href='menu.html';">Ingresar</button>
+          <button class="btn butn" th:onclick="'window.location.href=\'' + @{/menu} + '\'' ;">Ingresar</button>
+          
         </div>
         <div class="horizontal-rule"></div>
         <div class="row">
           <h3>Requerimientos anteriores</h2>
           <div class="buttons">
-            <button class="btn butn" onclick="window.location.href='reqAutoridades.html';">Febrero 24</button>
+            <button class="btn butn" th:onclick="'window.location.href=\'' + @{/reqAutoridades} + '\'';">Febrero 24</button>
             <button class="btn butn">Inicial</button>
           </div>
         </div>
