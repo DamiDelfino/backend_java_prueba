@@ -1,12 +1,19 @@
 package com.ejemplo.backend;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelExtensionsKt;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
+
+    @GetMapping("/inicio")
+    public String mostrarInicio(){
+        return "inicio";
+    }
 
     @GetMapping("/principal")
     public String mostrarPrincipal() {
@@ -35,21 +42,23 @@ public class HomeController {
     @GetMapping("/admin")
     public String mostrarAdmin(){
         return "admin";
-    }
-    
-    @GetMapping("/inicio")
-    public String mostrarInicio(){
-        return "inicio";
-    }
-    
+    }    
+        
     @GetMapping("/menu")
     public String mostrarMenu(){
         return "menu";
     }
     @GetMapping("/nuevo")
-    public String mostrarNuevo(){
-        return "nuevo";
+    public String mostrarNuevo(ModelExtensionsKt model) {
+        // Lógica para el formulario
+        return "nuevoFormulario";
     }
+
+    @ExceptionHandler(Exception.class)
+    public String handleError(Exception e) {
+        return "error";  // Asegúrate de tener una página de error configurada
+    }
+
     @GetMapping("/popup")
     public String mostrarPopup() {
         return "popup";  
@@ -61,7 +70,8 @@ public class HomeController {
     @GetMapping("/reqAutoridades")
     public String mostrarReqAutoridades(){
         return "reqAutoridades";
-    } @GetMapping("/requerimiento")
+    }
+     @GetMapping("/requerimiento")
     public String mostrarRequerimiento(){
         return "requerimiento";
     }

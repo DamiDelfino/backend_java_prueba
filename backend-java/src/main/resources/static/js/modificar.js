@@ -1,9 +1,9 @@
-window.onload = function () {
+/*window.onload = function () {
     enableMedidas();
     enableLavado();
     enableJuridico();
     
-};
+};*/
 
 function enableLavado() {
     // Obtiene el valor del select
