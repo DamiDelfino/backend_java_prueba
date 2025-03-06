@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -582,8 +582,8 @@
                 </div>
                 <!-- Botones de acción -->
                 <div class="d-flex justify-content-end gap-2">
-                    <button class="btn btn-danger" onclick="window.location.href='menu.html';">Cancelar</button>
-                    <button class="btn btn-success" onclick="window.location.href='menu.html';" >Guardar</button>
+                    <button class="btn btn-danger" th:attr="onclick='window.location.href=\'' + @{/menu} + '\''">Cancelar</button>
+                    <button class="btn btn-success" th:attr="onclick='window.location.href=\'' + @{/menu} + '\''">Guardar</button>
                     <button class="btn btn-warning" onclick="openModal()">Cambio de Autoridad</button>
                 </div>
             <!-- Modal (Pop-up) -->

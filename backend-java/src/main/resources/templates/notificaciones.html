@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
     <nav class="navbar navbar-dark " style="background-color: #343a40 !important;">
         <div class="container d-flex align-items-center">
             <img th:src="@{/imagenes/DAJUDECO.png}" alt="Logo de DAJUDECO" class="navbar-logo mr-3">
-            <a class="navbar-brand" href="principal.html">Sistema Estadístico</a>
+            <a class="navbar-brand" th:href="@{principal}">Sistema Estadístico</a>
   
             <!-- Menú Desplegable -->
             <div class="dropdown">
@@ -25,11 +25,11 @@
                     Menú
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="principal.html">Requerimientos</a>
-                        <a class="dropdown-item" href="notificaciones.html">Notificaciones</a>
+                        <a class="dropdown-item" th:href="@{principal}">Requerimientos</a>
+                        <a class="dropdown-item" th:href="@{notificaciones}">Notificaciones</a>
                         <hr>
                     <button type="button" class="btn btn-outline-danger"
-                        onclick="window.location.href='inicio.html';">Cerrar Sesión</button>
+                    th:attr="onclick='window.location.href=\'' + @{/inicio} + '\''">Cerrar Sesión</button>
                 </div>
   
             </div>
@@ -71,7 +71,7 @@
             </div>
     </div>
 
-    <script src="../js/notificaciones.js">
+    <script th:src="@{/js/notificaciones.js}">
         // Estructura de las tareas
        
     </script>
