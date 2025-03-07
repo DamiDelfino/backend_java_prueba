@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: layout}">
+<html lang="es" xmlns:th="https://www.thymeleaf.org" >
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,9 @@
 </head>
 
 <body>
-    <div th:fragment="content">
+    <!--Aca esta el Navbar extraido de NavbarAdmin-->
+    <div th:replace="~{navbarAdmin :: navbar}"></div>
+    
     <div class="container mt-4" id="contenedor">
         <h1 class="text-center">ADMINISTRADOR DE RESPUESTAS</h1>
         <h3>

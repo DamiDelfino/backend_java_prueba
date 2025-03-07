@@ -10,8 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class HomeController {
 
-    @GetMapping("/inicio")
+    @GetMapping("/")
     public String mostrarInicio(){
+        return "inicio";
+    }
+    @GetMapping("/inicio")
+    public String mostrarLogin(){
         return "inicio";
     }
 
@@ -26,7 +30,7 @@ public class HomeController {
     }
     @GetMapping("/estadistica")
     public String mostrarEstadistica() {
-        return "estadisitca";
+        return "estadistica";
     }
 
     @GetMapping("/modificar")
@@ -49,9 +53,9 @@ public class HomeController {
         return "menu";
     }
     @GetMapping("/nuevo")
-    public String mostrarNuevo(ModelExtensionsKt model) {
+    public String mostrarNuevo() {
         // Lógica para el formulario
-        return "nuevoFormulario";
+        return "nuevo";
     }
 
     @ExceptionHandler(Exception.class)
@@ -74,6 +78,10 @@ public class HomeController {
      @GetMapping("/requerimiento")
     public String mostrarRequerimiento(){
         return "requerimiento";
+    }
+    @GetMapping("/seguimiento")
+    public String mostrarSeguimiento(){
+        return "seguimiento";
     }
 
 }
