@@ -1,5 +1,11 @@
 const data = {
-    "2024": {
+     "2025": {
+        tasks: [
+            { title: "Proyecto nuevo - 15/03/2025", details: "Organizar reunión inicial con el equipo y definir tareas. Responsable: Ana." }
+        ],
+        file: "../imagenes/MODELO NOTA-Req2.pdf"
+    },
+     "2024": {
         tasks: [
             { title: "Notificación 09/10/2024", details: "Recordatorio actualización OCDE." },
             { title: "Notificación 08/10/2024", details: "Recuerde si existe una nueva causa, ingresarla mediante el botón Nueva Respuesta." },
@@ -7,12 +13,6 @@ const data = {
             { title: "Notificación 02/08/2024", details: "Se habilitan las causas de OCDE para su edición." }
         ],
         file: "../imagenes/MODELO NOTA-Req1.pdf"
-    },
-    "2025": {
-        tasks: [
-            { title: "Proyecto nuevo - 15/03/2025", details: "Organizar reunión inicial con el equipo y definir tareas. Responsable: Ana." }
-        ],
-        file: "../imagenes/MODELO NOTA-Req2.pdf"
     }
 };
 
