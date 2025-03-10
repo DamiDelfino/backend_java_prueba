@@ -9,10 +9,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Arrays;
+
 import com.ejemplo.backend.models.Causa;
 import com.ejemplo.backend.services.CausaService;
 import org.springframework.ui.Model;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -105,9 +109,25 @@ public class HomeController {
     }
 
       @PostMapping("/guardar")
-    public String guardarCausa(@ModelAttribute Causa causa) {
-        causaService.guardarCausa(causa);
-        return "redirect:/menu";
+    public String guardarCausa(@ModelAttribute Causa causa) throws ParseException{
+        
+        
+
+    SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat formatoSalida = new SimpleDateFormat("yyyy-MM-dd");
+    
+    String fechaString = causa.getFecha(); // Fecha recibida en formato dd/MM/yyyy
+    Date fecha = formatoEntrada.parse(fechaString); // Convertir la cadena de fecha a objeto Date
+    
+    // Convertir a formato yyyy-MM-dd para guardarlo en la base de datos
+    String fechaFormateada = formatoSalida.format(fecha);
+    causa.setFecha(fechaFormateada); // Guardar la fecha en el objeto causa
+    
+    // Guardar causa en la base de datos
+    causaService.guardarCausa(causa);
+
+    return "redirect:/menu";
+
     }
       @GetMapping("/editar/{id}")
     public String editarCausa(@PathVariable Long id, Model model) {
