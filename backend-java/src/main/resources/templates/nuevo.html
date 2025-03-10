@@ -20,8 +20,9 @@
         </div>
     </nav>
     <!--cuadro principal-->
-    <div class="container mt-4" id="contenedor">
-        <form class="needs-validation" novalidate>
+    <div class="container mt-4" id="contenedor" >
+        <form class="needs-validation" novalidate th:action="@{/guardar}" th:object="${causa}" method="post">
+             
             <div class="text-center mb-4">
                 <h1 class="text-center">RECOPILACIÓN INFORMACIÓN ESTADÍSTICA</h1>
                 <h2 class="text-center">GAFI - OCDE</h2>
@@ -49,26 +50,26 @@
                                 <div class="invalid-feedback">Este campo es obligatorio</div>
                             </td>
                             <!--Numero Expediente-->
-                            <td class="text-center"><input required class="form-control text-center" type="text">
+                            <td class="text-center"><input required class="form-control text-center" type="text" th:field="*{expediente}">
                                 <div class="invalid-feedback">Este campo es obligatorio</div>
                             </td>
                             <!--Año Inicio-->
-                            <td class="text-center"><input required class="form-control text-center" type="number">
+                            <td class="text-center"><input required class="form-control text-center" type="number" th:field="*{anioInicio}">
                                 <div class="invalid-feedback">Este campo es obligatorio</div>
                             </td>
                             <td class="text-center">
                                 <!--Año Ingreso-->
-                                <select class="form-select form-select-sm text-center" required>
-                                    <option value="">- Seleccione un año -</option>
-                                    <option value="17">2017</option>
-                                    <option value="18">2018</option>
-                                    <option value="19">2019</option>
-                                    <option value="20">2020</option>
-                                    <option value="21">2021</option>
-                                    <option value="22">2022</option>
-                                    <option value="23">2023</option>
-                                    <option value="24">2024</option>
-                                    <option value="25">2025</option>
+                                <select class="form-select form-select-sm text-center" th:field="*{anioIngreso}" required>
+                                    <option value="0">Seleccione una opción</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
                                 </select>
                                 <div class="invalid-feedback">Este campo es obligatorio</div>
                             </td>
@@ -76,7 +77,7 @@
                             <td class="text-center">
                                 <!--Delito-->
                                 <select class="form-select form-select-sm text-center" aria-label="Small select example"
-                                    required id="enableSelect" onchange="enableLavado()">
+                                    required id="enableSelect"  th:field="*{delito}" onchange="enableLavado()">
                                     <option value="">- Seleccione uno -</option>
                                     <optgroup label="OCDE">
                                         <option value="cohecho">Cohecho</option>
@@ -141,31 +142,31 @@
                         <tbody>
                             <tr>
                                 <!--Estado Procesal-->
-                                <td> <select class="form-select form-select-sm text-center" required>
+                                <td> <select class="form-select form-select-sm text-center" th:field="*{estado}" required>
                                         <option value="">- Seleccione uno -</option>
-                                        <option value="">Oposición de elevación a juicio</option>
-                                        <option value="">Incidente de falta de acción</option>
-                                        <option value="">Contienda </option>
-                                        <option value="">Elevación a Juicio</option>
-                                        <option value="">Etapa de Juicio Oral</option>
-                                        <option value="">Incompetencia</option>
-                                        <option value="">Con Requerimiento de Instrucción</option>
-                                        <option value="">Delegada en MPF</option>
-                                        <option value=""> Con Indagatoria</option>
-                                        <option value="">Con falta de Merito</option>
-                                        <option value="">Instrucción suplementaria</option>
-                                        <option value="">Exhorto en trámite </option>
-                                        <option value="">Suspensión del juicio a prueba</option>
-                                        <option value="">Procesamiento</option>
-                                        <option value="">Sentencia</option>
-                                        <option value="">Sobreseimiento</option>
-                                        <option value="">Trámite</option>
+                                        <option value="Oposición de elevación a juicio">Oposición de elevación a juicio</option>
+                                        <option value="Incidente de falta de acción">Incidente de falta de acción</option>
+                                        <option value="Contienda">Contienda </option>
+                                        <option value="Elevación a Juicio">Elevación a Juicio</option>
+                                        <option value="Etapa de Juicio Oral">Etapa de Juicio Oral</option>
+                                        <option value="Incompetencia">Incompetencia</option>
+                                        <option value="Con Requerimiento de Instrucción">Con Requerimiento de Instrucción</option>
+                                        <option value="Delegada en MPF">Delegada en MPF</option>
+                                        <option value="Con Indagatoria"> Con Indagatoria</option>
+                                        <option value="Con falta de Merito">Con falta de Merito</option>
+                                        <option value="Instrucción suplementaria">Instrucción suplementaria</option>
+                                        <option value="Exhorto en trámite ">Exhorto en trámite </option>
+                                        <option value="Suspensión del juicio a prueba">Suspensión del juicio a prueba</option>
+                                        <option value="Procesamiento">Procesamiento</option>
+                                        <option value="Sentencia">Sentencia</option>
+                                        <option value="Sobreseimiento">Sobreseimiento</option>
+                                        <option value="Trámite">Trámite</option>
                                     </select>
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
                                 </td>
                                 <td>
                                     <!--Fecha Estado Procesal-->
-                                    <input required class="form-control text-center" type="date">
+                                    <input required class="form-control text-center" type="date" th:field="*{fecha}" >
                                     <div class="invalid-feedback">Este campo es obligatorio</div>
                                 </td>
                             </tr>
